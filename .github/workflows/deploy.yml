@@ -1,0 +1,20 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          projectName: trendplay-games
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: 49950cb4294917ba3356379ba3e343e2
+          directory: .
+          branch: main
