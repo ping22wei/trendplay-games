@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Chain Challenge - Viral TikTok Game | TrendPlay</title>
+  <meta name="description" content="Play the viral Word Chain game! Connect words by first and last letters. Test your vocabulary with this addictive word chain challenge.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/" class="logo">🎮 TrendPlay</a>
+      <a href="/" class="back-btn">← Back to Home</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Word Chain Challenge</h1>
+    <p class="subtitle">Connect words by matching first and last letters! How long can your chain get?</p>
+
+    <!-- AdMaven_PLACEHOLDER -->
+
+    <div class="game-container">
+      <div class="score-board">
+        <div class="score-item">
+          <span class="score-label">Current Chain</span>
+          <span class="score-value" id="chain-length">0</span>
+        </div>
+        <div class="score-item">
+          <span class="score-label">Best Score</span>
+          <span class="score-value" id="best-score">0</span>
+        </div>
+      </div>
+
+      <div class="chain-display">
+        <div class="word-chain" id="word-chain"></div>
+      </div>
+
+      <div class="current-word">
+        <span class="hint">Last letter: </span>
+        <span class="target-letter" id="target-letter"></span>
+      </div>
+
+      <div class="input-area">
+        <input type="text" id="word-input" placeholder="Enter a word..." maxlength="15" autocomplete="off">
+        <button id="submit-btn">Submit</button>
+      </div>
+
+      <div class="hint-section">
+        <button id="hint-btn">💡 Get Hint</button>
+        <p class="hint-text" id="hint-text"></p>
+      </div>
+
+      <div class="game-status" id="game-status"></div>
+    </div>
+
+    <section class="related-guides">
+      <h2>Related Guides</h2>
+      <ul>
+        <li><a href="word-chain-basics.html"><strong>Word Chain Game Basics: Complete Beginner's Guide</strong></a></li>
+        <li><a href="vocabulary-building-word-chain.html"><strong>Vocabulary Building Through Word Chain: Learn New Words Fast</strong></a></li>
+        <li><a href="tikt-tock-word-chain-trend.html"><strong>TikTok Word Chain Trend: How to Go Viral With This Game</strong></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 TrendPlay. All games are free to play!</p>
+  </footer>
+
+  <script src="game.js"></script>
+</body>
+</html>
