@@ -11,7 +11,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Deploy to Cloudflare Pages
-        uses: cloudflare/wrangler-action@v3
+        uses: cloudflare/pages-action@v1
         with:
+          accountId: 49950cb4294917ba3356379ba3e343e2
+          projectName: trendplay-games
+          directory: .
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          command: pages deploy . --project-name trendplay-games
