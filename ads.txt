@@ -1,0 +1,2 @@
+# Google AdSense authorized sellers
+google.com, pub-6030436122772484, DIRECT, f08c47fec0942fa0
