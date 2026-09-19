@@ -1,14 +1,11 @@
-<!-- TrendPlay 新游戏页面模板 -->
-<!-- 复制此模板创建新游戏 -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Say The Word On Beat - Free Online Game | TrendPlay</title>
+    <title>Say The Word On Beat - Free Online Rhythm Word Game</title>
     <meta name="description" content="Play Say The Word On Beat rhythm challenge online for free! Test your timing skills with this addictive word game. No download required.">
-    <meta name="keywords" content="[关键词1], [关键词2], free online game">
+    <meta name="keywords" content="say the word on beat, rhythm game, word challenge, free online game">
     <meta name='admaven-placement' content='BpdU9qjCG'>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,158 +13,454 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
             min-height: 100vh;
-            color: #fff;
-        }
-        header {
-            padding: 1rem 2rem;
-            background: rgba(0,0,0,0.3);
-        }
-        nav {
-            max-width: 800px;
-            margin: 0 auto;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
+            justify-content: center;
             color: #fff;
-            text-decoration: none;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            color: #a0a0a0;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+        .game-area {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         .back-btn {
-            color: #aaa;
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #a0a0a0;
             text-decoration: none;
             padding: 8px 16px;
             border-radius: 8px;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255, 255, 255, 0.05);
             transition: all 0.3s;
         }
         .back-btn:hover {
             background: rgba(233, 69, 96, 0.2);
             color: #fff;
         }
-        main {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 0 1rem;
+        .word-display {
+            font-size: 3rem;
+            font-weight: bold;
+            margin: 30px 0;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+            min-height: 60px;
         }
-        h1 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        .beat-indicator {
+            width: 100%;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            position: relative;
+            margin: 20px 0;
+            overflow: hidden;
         }
-        .subtitle {
-            text-align: center;
-            color: #aaa;
-            margin-bottom: 2rem;
+        .beat-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            border-radius: 10px;
+            transition: width 0.1s linear;
         }
-        .game-area {
+        .beat-markers {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+        .marker {
+            width: 3px;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .btn {
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+        .score-display {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: #ffd700;
+        }
+        .level-display {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            margin-bottom: 20px;
+        }
+        .instructions {
             background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: left;
+        }
+        .instructions h3 {
+            color: #e94560;
+            margin-bottom: 15px;
+        }
+        .instructions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .instructions li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        .instructions li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #4ade80;
+            font-weight: bold;
+        }
+        .difficulty-selector {
+            margin: 20px 0;
+        }
+        .difficulty-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 2px solid transparent;
+            padding: 10px 20px;
             border-radius: 20px;
-            padding: 40px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            margin: 5px;
+            transition: all 0.2s;
+        }
+        .difficulty-btn.active {
+            border-color: #e94560;
+            background: rgba(233, 69, 96, 0.2);
+        }
+        .difficulty-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .pulse {
+            animation: pulse 0.5s ease-in-out;
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        .correct {
+            color: #4ade80;
+        }
+        .wrong {
+            color: #ef4444;
         }
         footer {
-            text-align: center;
-            padding: 2rem;
+            margin-top: 40px;
             color: #666;
-            margin-top: 2rem;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/" class="logo" title="TrendPlay Games">🎮 TrendPlay</a>
-            <a href="/" class="back-btn" title="TrendPlay Games">← Home</a>
-        </nav>
-    </header>
-    <main>
+    <div class="container">
+        <a href="/" class="back-btn">← Home</a>
         <h1>Say The Word On Beat</h1>
-        <p class="subtitle">[游戏副标题]</p>
+        <p class="subtitle">The Rhythm Challenge</p>
         
         <div class="game-area">
-            <!-- 游戏内容放在这里 -->
+            <div class="level-display">Level: <span id="level">1</span></div>
+            <div class="word-display" id="wordDisplay">Press START to begin!</div>
+            
+            <div class="beat-indicator">
+                <div class="beat-bar" id="beatBar"></div>
+                <div class="beat-markers">
+                    <div class="marker"></div>
+                    <div class="marker"></div>
+                    <div class="marker"></div>
+                    <div class="marker"></div>
+                </div>
+            </div>
+            
+            <div class="score-display">Score: <span id="score">0</span></div>
+            
+            <div class="difficulty-selector">
+                <button class="difficulty-btn active" data-speed="1000">Easy</button>
+                <button class="difficulty-btn" data-speed="700">Medium</button>
+                <button class="difficulty-btn" data-speed="400">Hard</button>
+            </div>
+            
+            <button class="btn" id="startBtn">START GAME</button>
+            <button class="btn" id="tapBtn" style="display:none;">TAP ON BEAT!</button>
         </div>
         
-        <div class="seo-content">
-            <h2>About Say The Word On Beat Game</h2>
-            <p>The <strong>Say The Word On Beat</strong> is a fun and engaging online game that tests your [技能类型] skills. This [游戏类型] challenge has become popular among players who enjoy [相关主题].</p>
+        <div class="instructions">
             <h3>How to Play</h3>
             <ul>
-                <li>[玩法说明1]</li>
-                <li>[玩法说明2]</li>
-                <li>[玩法说明3]</li>
-            </ul>
-            <h3>Why This Game Is Popular</h3>
-            <p>The Say The Word On Beat is perfect for [使用场景]! It's simple enough for beginners but challenging enough to master.</p>
-            <h3>Related Games</h3>
-            <ul class="related-links">
-                <li><a href="/word-chain/">Word Chain Challenge - Test your vocabulary</a></li>
-                <li><a href="/say-the-word-on-beat/">Say The Word On Beat - Rhythm game</a></li>
+                <li>Watch the beat bar move across the screen</li>
+                <li>A word appears above the bar</li>
+                <li>Click/TAP when the bar reaches the markers</li>
+                <li>Get points for hitting the beat accurately</li>
+                <li>Words get faster as you progress!</li>
+                <li>Choose difficulty: Easy, Medium, or Hard</li>
             </ul>
         </div>
         
         <footer>
-            <p>&copy; 2026 TrendPlay. All games are free to play.</p>
+            <p>Free online rhythm word game | Play and share with friends!</p>
         </footer>
-    </main>
-    <style>
-        .seo-content {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            text-align: left;
-            color: #a0a0a0;
+    </div>
+
+    <script>
+        // Audio context for sound effects
+        let audioContext = null;
+        
+        function initAudio() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
         }
-        .seo-content h2 {
-            color: #e94560;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+        
+        // Play beep sound
+        function playBeep(frequency = 800, duration = 0.1) {
+            if (!audioContext) return;
+            const oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            oscillator.frequency.value = frequency;
+            oscillator.type = 'sine';
+            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + duration);
+            oscillator.start(audioContext.currentTime);
+            oscillator.stop(audioContext.currentTime + duration);
         }
-        .seo-content h3 {
-            color: #e94560;
-            margin: 25px 0 12px;
-            font-size: 1.2rem;
+        
+        // Play correct sound
+        function playCorrect() {
+            playBeep(880, 0.15);
+            setTimeout(() => playBeep(1100, 0.1), 80);
         }
-        .seo-content p {
-            line-height: 1.8;
-            margin-bottom: 15px;
+        
+        // Play wrong sound
+        function playWrong() {
+            playBeep(200, 0.3);
         }
-        .seo-content ul {
-            margin-left: 20px;
-            line-height: 2;
+        
+        // Play beat marker sound
+        function playBeatMarker() {
+            playBeep(600, 0.05);
         }
-        .seo-content li {
-            margin-bottom: 8px;
+
+        // Game variables
+        let score = 0;
+        let level = 1;
+        let beatSpeed = 1000;
+        let isPlaying = false;
+        let currentWord = '';
+        let beatPosition = 0;
+        let beatDirection = 1;
+        let gameLoop;
+        let wordTimer;
+        
+        // Word lists by difficulty
+        const easyWords = ['cat', 'dog', 'sun', 'hat', 'cup', 'run', 'big', 'red', 'box', 'fun', 'sky', 'tree', 'fish', 'bird', 'book', 'ball', 'star', 'moon', 'hand', 'foot'];
+        const mediumWords = ['happy', 'jump', 'dance', 'sing', 'play', 'game', 'time', 'word', 'beat', 'rhythm', 'music', 'sound', 'clap', 'snap', 'drum', 'bell', 'horn', 'pipe', 'tube', 'line'];
+        const hardWords = ['rhythm', 'challenge', 'popular', 'amazing', 'incredible', 'fantastic', 'wonderful', 'extraordinary', 'unbelievable', 'magnificent', 'spectacular', 'phenomenal', 'impressive', 'remarkable', 'outstanding', 'terrific', 'superb', 'excellent'];
+        
+        // DOM elements
+        const wordDisplay = document.getElementById('wordDisplay');
+        const scoreDisplay = document.getElementById('score');
+        const levelDisplay = document.getElementById('level');
+        const beatBar = document.getElementById('beatBar');
+        const startBtn = document.getElementById('startBtn');
+        const tapBtn = document.getElementById('tapBtn');
+        const difficultyBtns = document.querySelectorAll('.difficulty-btn');
+        
+        // Difficulty selector
+        difficultyBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                difficultyBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                beatSpeed = parseInt(btn.dataset.speed);
+            });
+        });
+        
+        // Start button
+        startBtn.addEventListener('click', () => {
+            initAudio();
+            startGame();
+        });
+        
+        // Tap button
+        tapBtn.addEventListener('click', tapOnBeat);
+        document.addEventListener('keydown', (e) => {
+            if (e.code === 'Space' && isPlaying) {
+                e.preventDefault();
+                tapOnBeat();
+            }
+        });
+        
+        function startGame() {
+            score = 0;
+            level = 1;
+            updateDisplay();
+            isPlaying = true;
+            startBtn.style.display = 'none';
+            tapBtn.style.display = 'inline-block';
+            showNewWord();
         }
-        .related-links {
-            list-style: none;
-            margin-left: 0;
-            margin-top: 15px;
+        
+        function showNewWord() {
+            if (!isPlaying) return;
+            
+            // Select word based on level
+            let wordPool;
+            if (level <= 3) {
+                wordPool = easyWords;
+            } else if (level <= 6) {
+                wordPool = mediumWords;
+            } else {
+                wordPool = hardWords;
+            }
+            
+            currentWord = wordPool[Math.floor(Math.random() * wordPool.length)];
+            wordDisplay.textContent = currentWord;
+            wordDisplay.classList.add('pulse');
+            
+            // Reset beat bar
+            beatPosition = 0;
+            beatDirection = 1;
+            
+            // Start beat animation
+            clearInterval(gameLoop);
+            gameLoop = setInterval(updateBeat, 16);
+            
+            // Auto-advance to next word if not tapped
+            clearTimeout(wordTimer);
+            wordTimer = setTimeout(nextWord, beatSpeed * 1.5);
         }
-        .related-links li {
-            margin-bottom: 10px;
+        
+        function updateBeat() {
+            if (!isPlaying) return;
+            
+            // Play beat marker sound when bar passes markers (at 25%, 50%, 75%)
+            if ((beatPosition > 24 && beatPosition < 26) || 
+                (beatPosition > 49 && beatPosition < 51) || 
+                (beatPosition > 74 && beatPosition < 76)) {
+                playBeatMarker();
+            }
+            
+            beatPosition += beatDirection * (100 / (beatSpeed / 16));
+            
+            if (beatPosition >= 100) {
+                beatPosition = 100;
+                beatDirection = -1;
+            } else if (beatPosition <= 0) {
+                beatPosition = 0;
+                beatDirection = 1;
+            }
+            
+            beatBar.style.width = beatPosition + '%';
         }
-        .related-links a {
-            color: #60a5fa;
-            text-decoration: none;
-            padding: 10px 16px;
-            border-radius: 8px;
-            background: rgba(96, 165, 250, 0.08);
-            display: block;
-            transition: all 0.3s;
-            border: 1px solid rgba(96, 165, 250, 0.2);
+        
+        function tapOnBeat() {
+            if (!isPlaying) return;
+            
+            // Calculate accuracy based on beat position
+            let accuracy;
+            if (beatPosition >= 45 && beatPosition <= 55) {
+                accuracy = 'perfect';
+                score += 100;
+                wordDisplay.className = 'word-display correct';
+                playCorrect();
+            } else if (beatPosition >= 30 && beatPosition <= 70) {
+                accuracy = 'good';
+                score += 50;
+                wordDisplay.className = 'word-display correct';
+                playCorrect();
+            } else if (beatPosition >= 20 && beatPosition <= 80) {
+                accuracy = 'ok';
+                score += 25;
+                wordDisplay.className = 'word-display correct';
+                playCorrect();
+            } else {
+                accuracy = 'miss';
+                score = Math.max(0, score - 10);
+                wordDisplay.className = 'word-display wrong';
+                playWrong();
+            }
+            
+            // Level up every 500 points
+            level = Math.floor(score / 500) + 1;
+            updateDisplay();
+            
+            // Auto-advance
+            clearTimeout(wordTimer);
+            wordTimer = setTimeout(nextWord, 500);
         }
-        .related-links a:hover {
-            background: rgba(96, 165, 250, 0.15);
-            border-color: rgba(96, 165, 250, 0.4);
-            transform: translateX(5px);
+        
+        function nextWord() {
+            wordDisplay.classList.remove('pulse', 'correct', 'wrong');
+            showNewWord();
         }
-    </style>
+        
+        function updateDisplay() {
+            scoreDisplay.textContent = score;
+            levelDisplay.textContent = level;
+        }
+        
+        // Add SEO-friendly content at the bottom
+        const seoContent = document.createElement('div');
+        seoContent.innerHTML = `
+            <div style="max-width: 800px; margin: 40px auto; padding: 20px; text-align: left; color: #a0a0a0;">
+                <h2 style="color: #e94560; margin-bottom: 20px;">About Say The Word On Beat Game</h2>
+                <p>The <strong>Say The Word On Beat</strong> challenge has taken social media by storm! This rhythm game tests your timing skills as you try to say words in sync with a pulsing beat.</p>
+                <h3 style="color: #e94560; margin: 20px 0 10px;">How to Win</h3>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li>Watch the moving beat bar carefully</li>
+                    <li>Press SPACE or click when the bar hits the markers</li>
+                    <li>Perfect timing (center of bar) gives 100 points</li>
+                    <li>Good timing gives 50 points</li>
+                    <li>Words get harder as you level up</li>
+                </ul>
+                <h3 style="color: #e94560; margin: 20px 0 10px;">Why This Game Is Popular</h3>
+                <p>The Say The Word On Beat challenge is perfect for parties, team building, and testing your friends! It's simple enough for beginners but challenging enough to master. Share your high scores and compete with friends!</p>
+            </div>
+        `;
+        document.body.appendChild(seoContent);
+    </script>
 </body>
 </html>
