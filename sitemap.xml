@@ -13,39 +13,117 @@
     <loc>https://trendplay.top/word-chain/</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://trendplay.top/say-the-word-on-beat/</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://trendplay.top/word-scramble/</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendplay.top/eye-movement/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendplay.top/upside-down-smile/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://trendplay.top/spoiled-brat/</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   
-  <!-- CHANGWEICI Pages -->
+  <!-- CHANGWEICI Pages - Eye Movement -->
   <url>
-    <loc>https://trendplay.top/word-chain/word-chain-basics</loc>
+    <loc>https://trendplay.top/eye-movement/how-to-do-eye-movement-challenge.html</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://trendplay.top/word-chain/vocabulary-building-word-chain</loc>
+    <loc>https://trendplay.top/eye-movement/eye-movement-vs-normal-eyes.html</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://trendplay.top/word-chain/tikt-tock-word-chain-trend</loc>
+    <loc>https://trendplay.top/eye-movement/why-eye-movement-challenge-is-viral.html</loc>
     <lastmod>2026-09-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- CHANGWEICI Pages - Upside Down Smile -->
+  <url>
+    <loc>https://trendplay.top/upside-down-smile/how-to-do-upside-down-smile-challenge.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trendplay.top/upside-down-smile/only-1-percent-challenge-explained.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trendplay.top/upside-down-smile/upside-down-smile-science.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- CHANGWEICI Pages - Spoiled Brat -->
+  <url>
+    <loc>https://trendplay.top/spoiled-brat/how-to-win-spoiled-brat-challenge.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trendplay.top/spoiled-brat/spoiled-brat-challenge-explained.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trendplay.top/spoiled-brat/top-10-spoiled-brat-items.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- CHANGWEICI Pages - Word Chain -->
+  <url>
+    <loc>https://trendplay.top/word-chain/word-chain-basics.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trendplay.top/word-chain/vocabulary-building-word-chain.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://trendplay.top/word-chain/tikt-tock-word-chain-trend.html</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   
   <!-- Static files -->

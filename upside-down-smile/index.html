@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upside Down Smile Challenge - Try the Viral TikTok Game | TrendPlay</title>
+    <meta name="description" content="Can you do the Upside Down Smile Challenge? Turn your head upside down and smile! Only 1% of people can do it perfectly. Try now!">
+    <meta name="keywords" content="upside down smile challenge, viral tiktok game, only 1 percent challenge, face challenge">
+    <meta name="google-site-verification" content="f08c47fec0942fa0" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQT6823JBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZQT6823JBE');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6030436122772484" crossorigin="anonymous"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        header {
+            padding: 1rem 2rem;
+            background: rgba(0,0,0,0.3);
+        }
+        nav {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+        .back-btn {
+            color: #aaa;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            background: rgba(233, 69, 96, 0.2);
+            color: #fff;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            text-align: center;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+        }
+        .game-area {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        .face-display {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 30px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+        .face {
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 30%, #ffe0bd 0%, #f4c09a 100%);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .eye {
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border-radius: 50%;
+            position: absolute;
+            top: 35%;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        }
+        .eye.left { left: 25%; }
+        .eye.right { right: 25%; }
+        .pupil {
+            width: 15px;
+            height: 15px;
+            background: #2c3e50;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .mouth {
+            width: 80px;
+            height: 40px;
+            border: 4px solid #c0392b;
+            border-top: none;
+            border-radius: 0 0 40px 40px;
+            position: absolute;
+            bottom: 25%;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: all 0.3s;
+        }
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+        .slider-group {
+            width: 100%;
+            max-width: 400px;
+        }
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            color: #a0a0a0;
+        }
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.1);
+            outline: none;
+            -webkit-appearance: none;
+        }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #e94560;
+            cursor: pointer;
+        }
+        .btn {
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+        .result-box {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+        }
+        .result-title {
+            font-size: 1.5rem;
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+        .result-text {
+            font-size: 1.1rem;
+            color: #ffd700;
+        }
+        .match-score {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #4ade80;
+            margin: 20px 0;
+        }
+        .seo-content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: left;
+            color: #a0a0a0;
+        }
+        .seo-content h2 {
+            color: #e94560;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        .seo-content h3 {
+            color: #e94560;
+            margin: 25px 0 12px;
+            font-size: 1.2rem;
+        }
+        .seo-content p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .related-links {
+            list-style: none;
+            margin-left: 0;
+            margin-top: 15px;
+        }
+        .related-links li {
+            margin-bottom: 10px;
+        }
+        .related-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            background: rgba(96, 165, 250, 0.08);
+            display: block;
+            transition: all 0.3s;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+        }
+        .related-links a:hover {
+            background: rgba(96, 165, 250, 0.15);
+            border-color: rgba(96, 165, 250, 0.4);
+            transform: translateX(5px);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo" title="TrendPlay Games">🎮 TrendPlay</a>
+            <a href="/" class="back-btn" title="TrendPlay Games">← Home</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Upside Down Smile Challenge</h1>
+        <p class="subtitle">Can you smile with your head upside down? Only 1% can do it!</p>
+        
+        <div class="game-area">
+            <div class="face-display" id="face-display">
+                <div class="face" id="face">
+                    <div class="eye left"><div class="pupil"></div></div>
+                    <div class="eye right"><div class="pupil"></div></div>
+                    <div class="mouth" id="mouth"></div>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <div class="slider-group">
+                    <div class="slider-label">
+                        <span>Head Angle</span>
+                        <span id="angle-value">0°</span>
+                    </div>
+                    <input type="range" id="angle-slider" min="-180" max="0" value="0">
+                </div>
+                
+                <div class="slider-group">
+                    <div class="slider-label">
+                        <span>Smile Intensity</span>
+                        <span id="smile-value">50%</span>
+                    </div>
+                    <input type="range" id="smile-slider" min="0" max="100" value="50">
+                </div>
+                
+                <button class="btn" id="check-btn">Check My Smile</button>
+                
+                <div class="result-box" id="result-box">
+                    <div class="match-score" id="match-score">0%</div>
+                    <div class="result-title" id="result-title"></div>
+                    <div class="result-text" id="result-text"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="seo-content">
+            <h2>About the Upside Down Smile Challenge</h2>
+            <p>The <strong>Upside Down Smile Challenge</strong> is a viral TikTok trend where participants try to smile while their head is completely upside down. When you flip your head upside, the natural muscle movements create a unique expression that looks like a mix between a smile and a frown - often described as "haunting" or "creepy-cute".</p>
+            
+            <h3>How to Play</h3>
+            <p><strong>Drag the sliders</strong> to match the target expression! Rotate your virtual face upside down and adjust the smile intensity. The game will tell you how close you got to the perfect "upside down smile" look. Try to get a match score above 90%!</p>
+            
+            <h3>Why Is It Hard?</h3>
+            <p>When your head is upside down, gravity pulls your facial features in different directions. The <strong>orbicularis oris muscle</strong> (around your mouth) behaves differently when inverted, making it surprisingly difficult to create a natural-looking smile. This is why only about <strong>1% of people</strong> can do it perfectly in real life!</p>
+            
+            <h3>Related Challenges</h3>
+            <p>Try the <a href="/eye-movement/">Eye Movement Challenge</a> and the <a href="/spoiled-brat/">Spoiled Brat Challenge</a> for more viral fun!</p>
+            
+            <h3>Related Guides</h3>
+            <ul class="related-links">
+                <li><a href="/upside-down-smile/how-to-do-upside-down-smile-challenge.html">How to Do the Upside Down Smile Challenge - Step by Step</a></li>
+                <li><a href="/upside-down-smile/only-1-percent-challenge-explained.html">The Only 1% Challenge - Why So Few People Can Do It</a></li>
+                <li><a href="/upside-down-smile/upside-down-smile-science.html">The Science Behind the Upside Down Smile Face</a></li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>&copy; 2026 TrendPlay. All games are free to play.</p>
+        </footer>
+    </main>
+    <script>
+        const angleSlider = document.getElementById('angle-slider');
+        const smileSlider = document.getElementById('smile-slider');
+        const angleValue = document.getElementById('angle-value');
+        const smileValue = document.getElementById('smile-value');
+        const faceDisplay = document.getElementById('face-display');
+        const mouth = document.getElementById('mouth');
+        const checkBtn = document.getElementById('check-btn');
+        const resultBox = document.getElementById('result-box');
+        const matchScore = document.getElementById('match-score');
+        const resultTitle = document.getElementById('result-title');
+        const resultText = document.getElementById('result-text');
+        
+        const targets = [
+            { angle: -90, smile: 75 },
+            { angle: -120, smile: 60 },
+            { angle: -150, smile: 85 },
+            { angle: -60, smile: 50 }
+        ];
+        let currentTarget = targets[0];
+        
+        function updateFace() {
+            const angle = parseInt(angleSlider.value);
+            const smile = parseInt(smileSlider.value);
+            
+            angleValue.textContent = angle + '°';
+            smileValue.textContent = smile + '%';
+            
+            faceDisplay.style.transform = `rotate(${angle}deg)`;
+            
+            const mouthHeight = 20 + (smile * 0.6);
+            mouth.style.height = mouthHeight + 'px';
+            mouth.style.borderRadius = `0 0 ${mouthHeight}px ${mouthHeight}px`;
+        }
+        
+        angleSlider.addEventListener('input', updateFace);
+        smileSlider.addEventListener('input', updateFace);
+        
+        function newTarget() {
+            currentTarget = targets[Math.floor(Math.random() * targets.length)];
+        }
+        
+        checkBtn.addEventListener('click', () => {
+            const angle = parseInt(angleSlider.value);
+            const smile = parseInt(smileSlider.value);
+            
+            const angleDiff = Math.abs(angle - currentTarget.angle);
+            const smileDiff = Math.abs(smile - currentTarget.smile);
+            
+            const angleScore = Math.max(0, 100 - angleDiff);
+            const smileScore = Math.max(0, 100 - smileDiff);
+            const totalScore = Math.round((angleScore + smileScore) / 2);
+            
+            matchScore.textContent = totalScore + '%';
+            
+            let title, text;
+            if (totalScore >= 90) {
+                title = "🌟 PERFECT UPSIDE DOWN SMILE!";
+                text = "You're in the 1%! That's an incredible match!";
+            } else if (totalScore >= 70) {
+                title = "😊 Great Try!";
+                text = "You're close to the perfect upside down smile!";
+            } else if (totalScore >= 50) {
+                title = "😐 Getting There";
+                text = "Adjust the sliders to match the target expression!";
+            } else {
+                title = "😅 Keep Practicing";
+                text = "Try to match the angle and smile intensity shown!";
+            }
+            
+            resultTitle.textContent = title;
+            resultText.textContent = text;
+            resultBox.style.display = 'block';
+            
+            newTarget();
+        });
+        
+        updateFace();
+    </script>
+</body>
+</html>

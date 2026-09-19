@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Movement Challenge - Play Smooth Eye Tracking Game Online | TrendPlay</title>
+    <meta name="description" content="Can you do the Eye Movement Challenge? Test your eye tracking skills with this viral TikTok game. How smooth can you follow the moving dot? Try it now!">
+    <meta name="keywords" content="eye movement challenge, smooth eye tracking, tiktok challenge, viral game, psychopath score">
+    <meta name="google-site-verification" content="f08c47fec0942fa0" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQT6823JBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZQT6823JBE');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6030436122772484" crossorigin="anonymous"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        header {
+            padding: 1rem 2rem;
+            background: rgba(0,0,0,0.3);
+        }
+        nav {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+        .back-btn {
+            color: #aaa;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            background: rgba(233, 69, 96, 0.2);
+            color: #fff;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            text-align: center;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+        }
+        .game-area {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .eye-container {
+            width: 100%;
+            height: 300px;
+            background: radial-gradient(circle, #1a1a2e 0%, #0a0a15 100%);
+            border-radius: 15px;
+            position: relative;
+            cursor: crosshair;
+            margin: 20px 0;
+        }
+        .eye-ball {
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle at 30% 30%, #fff 0%, #e0e0e0 70%, #888 100%);
+            border-radius: 50%;
+            position: absolute;
+            transition: transform 0.05s ease-out;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        .pupil {
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle at 30% 30%, #4a90d9 0%, #1a1a2e 100%);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .target-dot {
+            width: 20px;
+            height: 20px;
+            background: #e94560;
+            border-radius: 50%;
+            position: absolute;
+            box-shadow: 0 0 15px #e94560;
+            transition: all 0.3s ease;
+        }
+        .score-board {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .score-item {
+            background: rgba(255,255,255,0.05);
+            padding: 15px 25px;
+            border-radius: 12px;
+        }
+        .score-label {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .score-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        .btn {
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+        .result-box {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+        }
+        .result-title {
+            font-size: 1.5rem;
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+        .result-text {
+            font-size: 1.1rem;
+            color: #ffd700;
+        }
+        .seo-content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: left;
+            color: #a0a0a0;
+        }
+        .seo-content h2 {
+            color: #e94560;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        .seo-content h3 {
+            color: #e94560;
+            margin: 25px 0 12px;
+            font-size: 1.2rem;
+        }
+        .seo-content p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .related-links {
+            list-style: none;
+            margin-left: 0;
+            margin-top: 15px;
+        }
+        .related-links li {
+            margin-bottom: 10px;
+        }
+        .related-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            background: rgba(96, 165, 250, 0.08);
+            display: block;
+            transition: all 0.3s;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+        }
+        .related-links a:hover {
+            background: rgba(96, 165, 250, 0.15);
+            border-color: rgba(96, 165, 250, 0.4);
+            transform: translateX(5px);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo" title="TrendPlay Games">🎮 TrendPlay</a>
+            <a href="/" class="back-btn" title="TrendPlay Games">← Home</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Eye Movement Challenge</h1>
+        <p class="subtitle">Can you follow the dot smoothly? Find out your Psychopath Score!</p>
+        
+        <div class="game-area">
+            <div class="score-board">
+                <div class="score-item">
+                    <div class="score-label">Smoothness</div>
+                    <div class="score-value" id="smoothness">0%</div>
+                </div>
+                <div class="score-item">
+                    <div class="score-label">Time</div>
+                    <div class="score-value" id="timer">30</div>
+                </div>
+            </div>
+            
+            <div class="eye-container" id="eye-container">
+                <div class="eye-ball" id="eye-ball">
+                    <div class="pupil"></div>
+                </div>
+                <div class="target-dot" id="target-dot"></div>
+            </div>
+            
+            <button class="btn" id="start-btn">Start Challenge</button>
+            
+            <div class="result-box" id="result-box">
+                <div class="result-title" id="result-title"></div>
+                <div class="result-text" id="result-text"></div>
+            </div>
+        </div>
+        
+        <div class="seo-content">
+            <h2>About the Eye Movement Challenge</h2>
+            <p>The <strong>Eye Movement Challenge</strong> is a viral TikTok trend that tests how smoothly you can track a moving object with your eyes. The challenge went viral in early September 2026, with millions of users trying to see if they have "psychopath eyes" - the ability to follow targets with unnaturally smooth eye movements.</p>
+            
+            <h3>How to Play</h3>
+            <p><strong>Follow the dot</strong> with your eyes (and your mouse/cursor). The target will move around the screen in random patterns. Your goal is to keep your eyes as smooth as possible while tracking it. At the end, you'll get a <strong>Smoothness Score</strong> and a fun <strong>Psychopath Score</strong> rating!</p>
+            
+            <h3>What Does a Smooth Eye Movement Mean?</h3>
+            <p>Smooth eye tracking is rare in humans. Most people's eyes make small jumps (called saccades) when following moving objects. The challenge measures how smoothly you can track without jerky movements. A high score means your eyes move like a predator or a smooth operator!</p>
+            
+            <h3>Related Challenges</h3>
+            <p>Check out other viral challenges like the <a href="/upside-down-smile/">Upside Down Smile Challenge</a> and the <a href="/spoiled-brat/">Spoiled Brat Challenge</a> for more fun games!</p>
+            
+            <h3>Related Guides</h3>
+            <ul class="related-links">
+                <li><a href="/eye-movement/how-to-do-eye-movement-challenge.html">How to Do the Eye Movement Challenge - Tips & Tricks</a></li>
+                <li><a href="/eye-movement/eye-movement-vs-normal-eyes.html">Eye Movement vs Normal Eyes - What's the Difference?</a></li>
+                <li><a href="/eye-movement/why-eye-movement-challenge-is-viral.html">Why the Eye Movement Challenge Went Viral on TikTok</a></li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>&copy; 2026 TrendPlay. All games are free to play.</p>
+        </footer>
+    </main>
+    <script>
+        let gameRunning = false;
+        let smoothnessScore = 0;
+        let lastAngle = 0;
+        let totalAngleChange = 0;
+        let expectedAngleChange = 0;
+        let timerInterval;
+        let timeLeft = 30;
+        let targetX = 50, targetY = 50;
+        let moveInterval;
+        
+        const eyeContainer = document.getElementById('eye-container');
+        const eyeBall = document.getElementById('eye-ball');
+        const targetDot = document.getElementById('target-dot');
+        const startBtn = document.getElementById('start-btn');
+        const smoothnessDisplay = document.getElementById('smoothness');
+        const timerDisplay = document.getElementById('timer');
+        const resultBox = document.getElementById('result-box');
+        const resultTitle = document.getElementById('result-title');
+        const resultText = document.getElementById('result-text');
+        
+        function moveTarget() {
+            const containerRect = eyeContainer.getBoundingClientRect();
+            targetX = 10 + Math.random() * (containerRect.width - 60);
+            targetY = 10 + Math.random() * (containerRect.height - 60);
+            targetDot.style.left = targetX + 'px';
+            targetDot.style.top = targetY + 'px';
+        }
+        
+        function updateEye(x, y) {
+            const containerRect = eyeContainer.getBoundingClientRect();
+            const eyeX = x - containerRect.left - 25;
+            const eyeY = y - containerRect.top - 25;
+            const clampedX = Math.max(0, Math.min(containerRect.width - 50, eyeX));
+            const clampedY = Math.max(0, Math.min(containerRect.height - 50, eyeY));
+            
+            eyeBall.style.left = clampedX + 'px';
+            eyeBall.style.top = clampedY + 'px';
+            
+            if (gameRunning) {
+                const dx = clampedX - (parseFloat(eyeBall.dataset.lastX || 0));
+                const dy = clampedY - (parseFloat(eyeBall.dataset.lastY || 0));
+                const currentAngle = Math.atan2(dy, dx) * 180 / Math.PI;
+                
+                if (eyeBall.dataset.lastX) {
+                    let angleDiff = currentAngle - lastAngle;
+                    if (angleDiff > 180) angleDiff -= 360;
+                    if (angleDiff < -180) angleDiff += 360;
+                    totalAngleChange += Math.abs(angleDiff);
+                    
+                    const dist = Math.sqrt(dx*dx + dy*dy);
+                    expectedAngleChange += dist * 0.5;
+                }
+                
+                eyeBall.dataset.lastX = clampedX;
+                eyeBall.dataset.lastY = clampedY;
+                lastAngle = currentAngle;
+                
+                const smoothness = expectedAngleChange > 0 ? Math.min(100, Math.round((totalAngleChange / expectedAngleChange) * 100)) : 0;
+                smoothnessDisplay.textContent = smoothness + '%';
+            }
+        }
+        
+        eyeContainer.addEventListener('mousemove', (e) => {
+            updateEye(e.clientX, e.clientY);
+        });
+        
+        eyeContainer.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+            const touch = e.touches[0];
+            updateEye(touch.clientX, touch.clientY);
+        });
+        
+        function startGame() {
+            gameRunning = true;
+            smoothnessScore = 0;
+            totalAngleChange = 0;
+            expectedAngleChange = 0;
+            timeLeft = 30;
+            resultBox.style.display = 'none';
+            startBtn.style.display = 'none';
+            
+            eyeBall.dataset.lastX = 125;
+            eyeBall.dataset.lastY = 125;
+            eyeBall.style.left = '125px';
+            eyeBall.style.top = '125px';
+            
+            moveTarget();
+            moveInterval = setInterval(moveTarget, 1500);
+            
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                timerDisplay.textContent = timeLeft;
+                if (timeLeft <= 0) {
+                    endGame();
+                }
+            }, 1000);
+        }
+        
+        function endGame() {
+            gameRunning = false;
+            clearInterval(timerInterval);
+            clearInterval(moveInterval);
+            
+            const smoothness = expectedAngleChange > 0 ? Math.round((totalAngleChange / expectedAngleChange) * 100) : 0;
+            const finalScore = Math.min(100, Math.max(0, 100 - smoothness));
+            
+            smoothnessDisplay.textContent = finalScore + '%';
+            
+            let title, text;
+            if (finalScore >= 90) {
+                title = "👁️ PSYCHOPATH EYES!";
+                text = "Your eye movements are incredibly smooth. Are you human? Or something else...";
+            } else if (finalScore >= 70) {
+                title = "🎯 Smooth Tracker";
+                text = "Great eye tracking skills! Most people can't do this.";
+            } else if (finalScore >= 40) {
+                title = "😐 Average Eyes";
+                text = "Your eyes make some normal jumps. Totally normal!";
+            } else {
+                title = "😵 Jerky Eyes";
+                text = "Your eyes are making lots of saccades. Try focusing more!";
+            }
+            
+            resultTitle.textContent = title;
+            resultText.textContent = text;
+            resultBox.style.display = 'block';
+            startBtn.style.display = 'inline-block';
+            startBtn.textContent = 'Try Again';
+        }
+        
+        startBtn.addEventListener('click', startGame);
+    </script>
+</body>
+</html>

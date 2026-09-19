@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spoiled Brat Challenge - Pick the Most Entitled Item | TrendPlay</title>
+    <meta name="description" content="Can you spot the spoiled brat items? Quick reaction game - pick the most entitled objects in seconds! Viral TikTok challenge game.">
+    <meta name="keywords" content="spoiled brat challenge, tiktok challenge, entitled game, quick reaction game, viral game">
+    <meta name="google-site-verification" content="f08c47fec0942fa0" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZQT6823JBE"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZQT6823JBE');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6030436122772484" crossorigin="anonymous"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        header {
+            padding: 1rem 2rem;
+            background: rgba(0,0,0,0.3);
+        }
+        nav {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+        .back-btn {
+            color: #aaa;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            background: rgba(233, 69, 96, 0.2);
+            color: #fff;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            text-align: center;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+        }
+        .game-area {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        .score-board {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+        .score-item {
+            background: rgba(255,255,255,0.05);
+            padding: 15px 25px;
+            border-radius: 12px;
+        }
+        .score-label {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .score-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        .prompt-text {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 30px;
+            padding: 15px;
+            background: rgba(233, 69, 96, 0.2);
+            border-radius: 10px;
+        }
+        .items-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .item-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 20px 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+        .item-card:hover {
+            border-color: #e94560;
+            transform: scale(1.05);
+            background: rgba(233, 69, 96, 0.1);
+        }
+        .item-card.selected {
+            border-color: #4ade80;
+            background: rgba(74, 222, 128, 0.2);
+        }
+        .item-card.wrong {
+            border-color: #ef4444;
+            background: rgba(239, 68, 68, 0.2);
+        }
+        .item-emoji {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .item-name {
+            font-size: 0.9rem;
+            color: #a0a0a0;
+        }
+        .timer-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .timer-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            border-radius: 3px;
+            transition: width 0.1s linear;
+        }
+        .btn {
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+        .result-box {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(233, 69, 96, 0.3);
+        }
+        .result-title {
+            font-size: 1.5rem;
+            color: #e94560;
+            margin-bottom: 10px;
+        }
+        .result-text {
+            font-size: 1.1rem;
+            color: #ffd700;
+        }
+        .seo-content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: left;
+            color: #a0a0a0;
+        }
+        .seo-content h2 {
+            color: #e94560;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        .seo-content h3 {
+            color: #e94560;
+            margin: 25px 0 12px;
+            font-size: 1.2rem;
+        }
+        .seo-content p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .related-links {
+            list-style: none;
+            margin-left: 0;
+            margin-top: 15px;
+        }
+        .related-links li {
+            margin-bottom: 10px;
+        }
+        .related-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            background: rgba(96, 165, 250, 0.08);
+            display: block;
+            transition: all 0.3s;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+        }
+        .related-links a:hover {
+            background: rgba(96, 165, 250, 0.15);
+            border-color: rgba(96, 165, 250, 0.4);
+            transform: translateX(5px);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo" title="TrendPlay Games">🎮 TrendPlay</a>
+            <a href="/" class="back-btn" title="TrendPlay Games">← Home</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Spoiled Brat Challenge</h1>
+        <p class="subtitle">Pick the most entitled items before time runs out!</p>
+        
+        <div class="game-area">
+            <div class="score-board">
+                <div class="score-item">
+                    <div class="score-label">Score</div>
+                    <div class="score-value" id="score">0</div>
+                </div>
+                <div class="score-item">
+                    <div class="score-label">Time</div>
+                    <div class="score-value" id="timer">30</div>
+                </div>
+                <div class="score-item">
+                    <div class="score-label">Round</div>
+                    <div class="score-value" id="round">1</div>
+                </div>
+            </div>
+            
+            <div class="timer-bar">
+                <div class="timer-fill" id="timer-fill"></div>
+            </div>
+            
+            <div class="prompt-text" id="prompt">Ready? Click Start!</div>
+            
+            <div class="items-grid" id="items-grid"></div>
+            
+            <button class="btn" id="start-btn">Start Challenge</button>
+        </div>
+        
+        <div class="seo-content">
+            <h2>About the Spoiled Brat Challenge</h2>
+            <p>The <strong>Spoiled Brat Challenge</strong> went viral on Snapchat and TikTok in September 2026. The game tests your ability to quickly identify objects that scream "entitled teenager" - think gold-plated toys, pink stress balls, and other ridiculously privileged items.</p>
+            
+            <h3>How to Play</h3>
+            <p><strong>Click the most spoiled-brat item</strong> from the options shown. You'll have only a few seconds per round! The faster and more accurately you pick, the higher your score. Can you spot what a truly spoiled brat would own?</p>
+            
+            <h3>What Makes an Item "Spoiled Brat"?</h3>
+            <p>Look for items that are <strong>overly expensive, childish, or pretentious</strong>. Gold objects, pink everything, fancy toys, and anything that screams "I have too much money and too little personality" are usually correct answers!</p>
+            
+            <h3>Related Challenges</h3>
+            <p>Try the <a href="/eye-movement/">Eye Movement Challenge</a> and the <a href="/upside-down-smile/">Upside Down Smile Challenge</a> for more viral fun!</p>
+            
+            <h3>Related Guides</h3>
+            <ul class="related-links">
+                <li><a href="/spoiled-brat/how-to-win-spoiled-brat-challenge.html">How to Win the Spoiled Brat Challenge - Pro Tips</a></li>
+                <li><a href="/spoiled-brat/spoiled-brat-challenge-explained.html">The Spoiled Brat Challenge Explained - Where It Started</a></li>
+                <li><a href="/spoiled-brat/top-10-spoiled-brat-items.html">Top 10 Most Spoiled Brat Items in the Game</a></li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>&copy; 2026 TrendPlay. All games are free to play.</p>
+        </footer>
+    </main>
+    <script>
+        const allItems = [
+            { emoji: '👑', name: 'Gold Crown', spoiled: true },
+            { emoji: '🎈', name: 'Pink Balloon', spoiled: false },
+            { emoji: '💎', name: 'Diamond Ring', spoiled: true },
+            { emoji: '🧸', name: 'Teddy Bear', spoiled: false },
+            { emoji: '🌸', name: 'Flower', spoiled: false },
+            { emoji: '💅', name: 'Pink Polish', spoiled: true },
+            { emoji: '📚', name: 'Books', spoiled: false },
+            { emoji: '👜', name: 'Designer Bag', spoiled: true },
+            { emoji: '🎵', name: 'Music Notes', spoiled: false },
+            { emoji: '🍦', name: 'Ice Cream', spoiled: false },
+            { emoji: '🦄', name: 'Unicorn Toy', spoiled: true },
+            { emoji: '⚽', name: 'Soccer Ball', spoiled: false },
+            { emoji: '💰', name: 'Money Stack', spoiled: true },
+            { emoji: '🌈', name: 'Rainbow', spoiled: false },
+            { emoji: '🎀', name: 'Pink Ribbon', spoiled: true },
+            { emoji: '🖊️', name: 'Pen', spoiled: false },
+            { emoji: '🗝️', name: 'Gold Key', spoiled: true },
+            { emoji: '🏀', name: 'Basketball', spoiled: false },
+            { emoji: '🦩', name: 'Flamingo Decor', spoiled: true },
+            { emoji: '🍎', name: 'Apple', spoiled: false }
+        ];
+        
+        const prompts = [
+            'Pick the MOST spoiled brat item!',
+            'Which item screams ENTITLEMENT?',
+            'Find the most RICH kid item!',
+            'Click the most PRETENTIOUS object!',
+            'What would a spoiled teen own?'
+        ];
+        
+        let score = 0;
+        let timeLeft = 30;
+        let round = 1;
+        let gameRunning = false;
+        let currentItems = [];
+        let timerInterval;
+        
+        const scoreDisplay = document.getElementById('score');
+        const timerDisplay = document.getElementById('timer');
+        const roundDisplay = document.getElementById('round');
+        const timerFill = document.getElementById('timer-fill');
+        const promptText = document.getElementById('prompt');
+        const itemsGrid = document.getElementById('items-grid');
+        const startBtn = document.getElementById('start-btn');
+        
+        function getRandomItems(count) {
+            const shuffled = [...allItems].sort(() => Math.random() - 0.5);
+            return shuffled.slice(0, count);
+        }
+        
+        function renderItems() {
+            itemsGrid.innerHTML = '';
+            currentItems.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'item-card';
+                card.innerHTML = `<div class="item-emoji">${item.emoji}</div><div class="item-name">${item.name}</div>`;
+                card.addEventListener('click', () => selectItem(index, card));
+                itemsGrid.appendChild(card);
+            });
+        }
+        
+        function selectItem(index, card) {
+            if (!gameRunning) return;
+            
+            const item = currentItems[index];
+            if (item.spoiled) {
+                score += 10;
+                card.classList.add('selected');
+                scoreDisplay.textContent = score;
+            } else {
+                card.classList.add('wrong');
+                score = Math.max(0, score - 5);
+                scoreDisplay.textContent = score;
+            }
+            
+            setTimeout(() => {
+                nextRound();
+            }, 500);
+        }
+        
+        function nextRound() {
+            round++;
+            roundDisplay.textContent = round;
+            promptText.textContent = prompts[Math.floor(Math.random() * prompts.length)];
+            
+            const spoiledCount = Math.floor(Math.random() * 2) + 1;
+            const spoiledItems = allItems.filter(i => i.spoiled).sort(() => Math.random() - 0.5).slice(0, spoiledCount);
+            const normalItems = allItems.filter(i => !i.spoiled).sort(() => Math.random() - 0.5).slice(0, 6 - spoiledCount);
+            currentItems = [...spoiledItems, ...normalItems].sort(() => Math.random() - 0.5);
+            
+            renderItems();
+        }
+        
+        function startGame() {
+            gameRunning = true;
+            score = 0;
+            timeLeft = 30;
+            round = 1;
+            scoreDisplay.textContent = score;
+            timerDisplay.textContent = timeLeft;
+            roundDisplay.textContent = round;
+            startBtn.style.display = 'none';
+            
+            promptText.textContent = prompts[0];
+            nextRound();
+            
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                timerDisplay.textContent = timeLeft;
+                timerFill.style.width = (timeLeft / 30 * 100) + '%';
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    gameRunning = false;
+                    promptText.textContent = `Game Over! Score: ${score}`;
+                    startBtn.style.display = 'inline-block';
+                    startBtn.textContent = 'Play Again';
+                }
+            }, 1000);
+        }
+        
+        startBtn.addEventListener('click', startGame);
+    </script>
+</body>
+</html>
