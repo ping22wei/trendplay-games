@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Scramble Game - Play Online Free | TrendPlay</title>
+    <meta name="description" content="Play Word Scramble game online for free! Unscramble letters to form words. Test your vocabulary with this addictive word puzzle challenge.">
+    <meta name="keywords" content="word scramble, word game, unscramble words, vocabulary game, free online game">
+    <meta name='admaven-placement' content='BpdU9qjCG'>
+    <!-- Adsterra Popunder -->
+    <script src="https://pl31394918.profitableratecpmnetwork.com/b5/ad/53/b5ad53d6557343de4653878201cd435e.js"></script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+        header {
+            padding: 1rem 2rem;
+            background: rgba(0,0,0,0.3);
+        }
+        nav {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-decoration: none;
+        }
+        .back-btn {
+            color: #aaa;
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            transition: all 0.3s;
+        }
+        .back-btn:hover {
+            background: rgba(233, 69, 96, 0.2);
+            color: #fff;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        h1 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .subtitle {
+            text-align: center;
+            color: #a0a0a0;
+            margin-bottom: 2rem;
+        }
+        .game-area {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+        .score-board {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+        .score-item {
+            background: rgba(255,255,255,0.05);
+            padding: 15px 25px;
+            border-radius: 12px;
+        }
+        .score-label {
+            color: #a0a0a0;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+        .score-value {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #ffd700;
+        }
+        .scrambled-word {
+            font-size: 3rem;
+            font-weight: bold;
+            letter-spacing: 10px;
+            margin: 30px 0;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(233, 69, 96, 0.5);
+        }
+        .hint-text {
+            color: #a0a0a0;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        .answer-input {
+            width: 100%;
+            max-width: 300px;
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+            text-align: center;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        .answer-input:focus {
+            outline: none;
+            border-color: #e94560;
+        }
+        .btn {
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            color: #fff;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            margin: 10px;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(233, 69, 96, 0.3);
+        }
+        .btn-secondary {
+            background: rgba(255,255,255,0.1);
+        }
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.2);
+        }
+        .message {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        .message.correct {
+            background: rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+        }
+        .message.wrong {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        .timer-bar {
+            width: 100%;
+            height: 6px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 3px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .timer-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #e94560, #ff6b6b);
+            border-radius: 3px;
+            transition: width 0.1s linear;
+        }
+        .seo-content {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            text-align: left;
+            color: #a0a0a0;
+        }
+        .seo-content h2 {
+            color: #e94560;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        .seo-content h3 {
+            color: #e94560;
+            margin: 25px 0 12px;
+            font-size: 1.2rem;
+        }
+        .seo-content p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+        .seo-content ul {
+            margin-left: 20px;
+            line-height: 2;
+        }
+        .related-links {
+            list-style: none;
+            margin-left: 0;
+            margin-top: 15px;
+        }
+        .related-links li {
+            margin-bottom: 10px;
+        }
+        .related-links a {
+            color: #60a5fa;
+            text-decoration: none;
+            padding: 10px 16px;
+            border-radius: 8px;
+            background: rgba(96, 165, 250, 0.08);
+            display: block;
+            transition: all 0.3s;
+            border: 1px solid rgba(96, 165, 250, 0.2);
+        }
+        .related-links a:hover {
+            background: rgba(96, 165, 250, 0.15);
+            border-color: rgba(96, 165, 250, 0.4);
+            transform: translateX(5px);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo" title="TrendPlay Games">🎮 TrendPlay</a>
+            <a href="/" class="back-btn" title="TrendPlay Games">← Home</a>
+        </nav>
+    </header>
+    <main>
+        <h1>Word Scramble</h1>
+        <p class="subtitle">Unscramble the letters to form words!</p>
+        
+        <div class="game-area">
+            <div class="score-board">
+                <div class="score-item">
+                    <div class="score-label">Score</div>
+                    <div class="score-value" id="score">0</div>
+                </div>
+                <div class="score-item">
+                    <div class="score-label">Time</div>
+                    <div class="score-value" id="timer">60</div>
+                </div>
+                <div class="score-item">
+                    <div class="score-label">Word</div>
+                    <div class="score-value" id="word-count">0</div>
+                </div>
+            </div>
+            
+            <div class="timer-bar">
+                <div class="timer-fill" id="timer-fill"></div>
+            </div>
+            
+            <div class="scrambled-word" id="scrambled-word">PRESS START</div>
+            <p class="hint-text" id="hint"></p>
+            
+            <input type="text" class="answer-input" id="answer-input" placeholder="Type your answer..." autocomplete="off">
+            <br>
+            <button class="btn" id="submit-btn">Submit</button>
+            <button class="btn btn-secondary" id="skip-btn">Skip</button>
+            <button class="btn btn-secondary" id="hint-btn">Hint</button>
+            
+            <div class="message" id="message" style="display: none;"></div>
+        </div>
+        
+        <div class="seo-content">
+            <h2>About Word Scramble Game</h2>
+            <p><strong>Word Scramble</strong> is a classic word puzzle game that challenges your vocabulary and quick thinking! Rearrange scrambled letters to form valid English words before time runs out.</p>
+            
+            <h3>How to Play</h3>
+            <ul>
+                <li>Look at the scrambled letters</li>
+                <li>Type the correct word in the input box</li>
+                <li>Press Enter or click Submit</li>
+                <li>Score points for correct answers</li>
+                <li>Use hints if you're stuck</li>
+                <li>Try to solve as many words as possible in 60 seconds</li>
+            </ul>
+            
+            <h3>Why Word Scramble Is Popular</h3>
+            <p>Word Scramble games are perfect for improving your vocabulary, spelling, and cognitive skills. They're popular on social media like TikTok where players compete to see who can unscramble words the fastest. Great for all ages and skill levels!</p>
+            
+            <h3>Related Games</h3>
+            <ul class="related-links">
+                <li><a href="/word-chain/">Word Chain Challenge - Connect words by first and last letters</a></li>
+                <li><a href="/say-the-word-on-beat/">Say The Word On Beat - Rhythm word game</a></li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>&copy; 2026 TrendPlay. All games are free to play.</p>
+        </footer>
+    </main>
+    <!-- Adsterra Social Bar -->
+    <script src="https://pl31394919.profitableratecpmnetwork.com/8f/52/20/8f52202f78bea09048c0a14d42f054dc.js"></script>
+    <script>
+        // Word list with hints
+        const wordList = [
+            { word: 'APPLE', hint: 'A red fruit' },
+            { word: 'BEACH', hint: 'Sand and ocean' },
+            { word: 'CANDLE', hint: 'Wax with a flame' },
+            { word: 'DANCE', hint: 'Move to music' },
+            { word: 'EAGLE', hint: 'Majestic bird' },
+            { word: 'FLAME', hint: 'Hot and bright' },
+            { word: 'GRAPE', hint: 'Purple fruit' },
+            { word: 'HEART', hint: 'Organ of love' },
+            { word: 'JUNGLE', hint: 'Dense forest' },
+            { word: 'KITE', hint: 'Flies in wind' },
+            { word: 'LEMON', hint: 'Yellow citrus' },
+            { word: 'MOUNT', hint: 'Tall hill' },
+            { word: 'NOBLE', hint: 'Honorable' },
+            { word: 'OCEAN', hint: 'Vast sea' },
+            { word: 'PIANO', hint: 'Musical instrument' },
+            { word: 'QUEEN', hint: 'Female monarch' },
+            { word: 'RIVER', hint: 'Flowing water' },
+            { word: 'SNAKE', hint: 'Slithery reptile' },
+            { word: 'TIGER', hint: 'Striped cat' },
+            { word: 'UNIQUE', hint: 'One of a kind' }
+        ];
+        
+        let score = 0;
+        let timeLeft = 60;
+        let wordCount = 0;
+        let currentWord = '';
+        let gameRunning = false;
+        let timerInterval;
+        
+        const scrambledWord = document.getElementById('scrambled-word');
+        const answerInput = document.getElementById('answer-input');
+        const submitBtn = document.getElementById('submit-btn');
+        const skipBtn = document.getElementById('skip-btn');
+        const hintBtn = document.getElementById('hint-btn');
+        const message = document.getElementById('message');
+        const scoreDisplay = document.getElementById('score');
+        const timerDisplay = document.getElementById('timer');
+        const wordCountDisplay = document.getElementById('word-count');
+        const timerFill = document.getElementById('timer-fill');
+        const hintText = document.getElementById('hint');
+        
+        function scramble(word) {
+            let arr = word.split('');
+            for (let i = arr.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [arr[i], arr[j]] = [arr[j], arr[i]];
+            }
+            let scrambled = arr.join('');
+            return scrambled === word ? scramble(word) : scrambled;
+        }
+        
+        function newWord() {
+            const item = wordList[Math.floor(Math.random() * wordList.length)];
+            currentWord = item.word;
+            hintText.textContent = 'Hint: ' + item.hint;
+            scrambledWord.textContent = scramble(currentWord);
+            answerInput.value = '';
+            answerInput.focus();
+        }
+        
+        function showMessage(text, type) {
+            message.textContent = text;
+            message.className = 'message ' + type;
+            message.style.display = 'block';
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 1500);
+        }
+        
+        function checkAnswer() {
+            if (!gameRunning) return;
+            
+            const answer = answerInput.value.toUpperCase().trim();
+            if (answer === currentWord) {
+                score += 10;
+                wordCount++;
+                scoreDisplay.textContent = score;
+                wordCountDisplay.textContent = wordCount;
+                showMessage('Correct! +10 points', 'correct');
+                newWord();
+            } else {
+                showMessage('Try again!', 'wrong');
+                answerInput.value = '';
+            }
+        }
+        
+        function startGame() {
+            score = 0;
+            timeLeft = 60;
+            wordCount = 0;
+            scoreDisplay.textContent = score;
+            timerDisplay.textContent = timeLeft;
+            wordCountDisplay.textContent = wordCount;
+            gameRunning = true;
+            
+            newWord();
+            
+            timerInterval = setInterval(() => {
+                timeLeft--;
+                timerDisplay.textContent = timeLeft;
+                timerFill.style.width = (timeLeft / 60 * 100) + '%';
+                
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    gameRunning = false;
+                    scrambledWord.textContent = 'GAME OVER';
+                    hintText.textContent = 'Final Score: ' + score;
+                    answerInput.disabled = true;
+                }
+            }, 1000);
+        }
+        
+        submitBtn.addEventListener('click', checkAnswer);
+        answerInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') checkAnswer();
+        });
+        skipBtn.addEventListener('click', () => {
+            if (gameRunning) {
+                showMessage('Skipped! Answer: ' + currentWord, 'wrong');
+                newWord();
+            }
+        });
+        hintBtn.addEventListener('click', () => {
+            if (gameRunning) {
+                hintText.textContent = 'Hint: ' + currentWord[0] + '___';
+            }
+        });
+        
+        // Start button appears first
+        scrambledWord.addEventListener('click', () => {
+            if (!gameRunning) {
+                answerInput.disabled = false;
+                startGame();
+            }
+        });
+    </script>
+</body>
+</html>
